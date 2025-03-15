@@ -1,0 +1,2 @@
+Aquí se implementan los casos de uso que manipulan entidades.
+

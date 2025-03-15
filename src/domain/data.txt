@@ -1,0 +1,2 @@
+Aquí definimos las entidades y contratos que la aplicación debe seguir.
+
