@@ -1,44 +1,21 @@
 import { useState } from "react";
-import logo from "../../assets/img/logo_oficial.png";
 import BuscadorGeneral from "./BuscadorGeneral";
 import BuscadorVehiculo from "./BuscadorVehiculo";
 import BuscadorProducto from "./BuscadorProducto";
+import NavBar from "../components/NavBar";
 
 export default function Buscador() {
-  const [categoria, setCategoria] = useState<string>("Kit + Bomba");
   const [tipoBusqueda, setTipoBusqueda] = useState<"general" | "vehiculo" | "producto">("vehiculo");
 
   return (
     <div className="min-h-screen bg-white text-black font-sans">
       {/* Navbar */}
-      <nav className="bg-black text-white py-3 px-4">
-        <div className="container mx-auto flex justify-between items-center">
-          <div className="flex items-center">
-            <img src={logo} alt="Logo" className="h-10 mr-3" />
-            <span className="text-lg font-extrabold tracking-wide">
-              | REPUESTOS ITUZAINGÓ™ | CATÁLOGO ONLINE
-            </span>
-          </div>
-        </div>
-      </nav>
+      <NavBar />
 
       {/* Categorías */}
-      <div className="bg-black text-white py-2 flex flex-wrap justify-center gap-4 px-4">
-        {["Kit + Bomba", "Homocinéticas", "Pastillas de Freno"].map((item) => (
-          <button
-            key={item}
-            className={`px-4 py-2 text-lg font-semibold border-b-2 ${
-              categoria === item ? "border-red-600 text-red-500" : "border-transparent"
-            } transition`}
-            onClick={() => setCategoria(item)}
-          >
-            {item}
-          </button>
-        ))}
-      </div>
 
       {/* Opciones de búsqueda */}
-      <div className="mt-6 flex flex-wrap justify-center gap-2">
+      <div className="mt-32 flex flex-wrap justify-center gap-2">
         <button
           className={`border px-4 py-3 text-sm md:text-lg transition ${
             tipoBusqueda === "general" ? "bg-gray-200" : ""
